@@ -4,8 +4,8 @@ FROM alpine:latest as build
 # Actualizar e instalar OpenJDK 17
 RUN apk update && apk add openjdk17
 
-# Copiar el contexto de construcción al contenedor
-COPY src .
+# Copiar todo el contexto del proyecto al contenedor
+COPY . .
 
 # Hacer el script gradlew ejecutable
 RUN chmod +x ./gradlew
